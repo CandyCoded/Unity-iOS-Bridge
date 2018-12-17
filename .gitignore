@@ -41,5 +41,13 @@ Assets/StreamingAssets/crashlytics-build.properties
 
 # Custom
 
+.scannerwork/
+.vscode/
+
+/*.meta
+
 Packages/
 ProjectSettings/
+
+*.log
+*.xml
