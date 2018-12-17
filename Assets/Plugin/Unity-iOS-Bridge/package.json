@@ -1,0 +1,11 @@
+{
+    "name": "com.candycoded.unity-ios-bridge",
+    "displayName": "Unity iOS Bridge",
+    "version": "1.0.0",
+    "unity": "2018.3",
+    "description": "Bridge for requesting state from an iOS device",
+    "keywords": [
+        "ios"
+    ],
+    "dependencies": {}
+}
