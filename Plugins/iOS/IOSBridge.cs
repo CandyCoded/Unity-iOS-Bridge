@@ -3,14 +3,8 @@ using System.Runtime.InteropServices;
 namespace CandyCoded.UnityIOSBridge
 {
 
-    public static class IOSBridge
+    public static class Accessibility
     {
-
-        [DllImport("__Internal")]
-        public static extern bool IOSPermissionCameraOK();
-
-        [DllImport("__Internal")]
-        public static extern bool IOSIsLowPowerModeEnabled();
 
         [DllImport("__Internal")]
         public static extern bool IOSUIAccessibilityIsAssistiveTouchRunning();
@@ -56,6 +50,22 @@ namespace CandyCoded.UnityIOSBridge
 
         [DllImport("__Internal")]
         public static extern bool IOSUIAccessibilityIsSpeakSelectionEnabled();
+
+    }
+
+    public static class Permission
+    {
+
+        [DllImport("__Internal")]
+        public static extern bool IOSPermissionCameraOK();
+
+    }
+
+    public static class Settings
+    {
+
+        [DllImport("__Internal")]
+        public static extern bool IOSIsLowPowerModeEnabled();
 
         [DllImport("__Internal")]
         public static extern bool IOSUIImpactFeedbackGenerator(string style = "medium");
