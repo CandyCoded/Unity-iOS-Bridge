@@ -1,6 +1,6 @@
 using System.Runtime.InteropServices;
 
-namespace CandyCoded
+namespace CandyCoded.UnityIOSBridge
 {
 
     public static class IOSBridge
