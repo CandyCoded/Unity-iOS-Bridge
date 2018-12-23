@@ -27,7 +27,7 @@ Make your apps accessible to everyone, including people with disabilities.
 Returns a Boolean value indicating whether the system preference for AssistiveTouch is enabled.
 
 ```csharp
-Debug.Log(CandyCoded.UnityIOSBridge.Accessibility.IOSUIAccessibilityIsAssistiveTouchRunning); // true
+Debug.Log(CandyCoded.UnityIOSBridge.Accessibility.IOSUIAccessibilityIsAssistiveTouchRunning()); // true
 ```
 
 Ref: <https://developer.apple.com/documentation/uikit/1648479-uiaccessibilityisassistivetouchr?language=objc>
@@ -37,7 +37,7 @@ Ref: <https://developer.apple.com/documentation/uikit/1648479-uiaccessibilityisa
 Returns a Boolean value indicating whether VoiceOver is running.
 
 ```csharp
-Debug.Log(CandyCoded.UnityIOSBridge.Accessibility.IOSUIAccessibilityIsVoiceOverRunning); // true
+Debug.Log(CandyCoded.UnityIOSBridge.Accessibility.IOSUIAccessibilityIsVoiceOverRunning()); // true
 ```
 
 Ref: <https://developer.apple.com/documentation/uikit/1615187-uiaccessibilityisvoiceoverrunnin?language=objc>
@@ -47,7 +47,7 @@ Ref: <https://developer.apple.com/documentation/uikit/1615187-uiaccessibilityisv
 Returns a Boolean value indicating whether Switch Control is enabled.
 
 ```csharp
-Debug.Log(CandyCoded.UnityIOSBridge.Accessibility.IOSUIAccessibilityIsSwitchControlRunning); // true
+Debug.Log(CandyCoded.UnityIOSBridge.Accessibility.IOSUIAccessibilityIsSwitchControlRunning()); // true
 ```
 
 Ref: <https://developer.apple.com/documentation/uikit/1615131-uiaccessibilityisswitchcontrolru?language=objc>
@@ -57,7 +57,7 @@ Ref: <https://developer.apple.com/documentation/uikit/1615131-uiaccessibilityiss
 Returns a Boolean value indicating whether the system preference for Shake to Undo is enabled.
 
 ```csharp
-Debug.Log(CandyCoded.UnityIOSBridge.Accessibility.IOSUIAccessibilityIsShakeToUndoEnabled); // true
+Debug.Log(CandyCoded.UnityIOSBridge.Accessibility.IOSUIAccessibilityIsShakeToUndoEnabled()); // true
 ```
 
 Ref: <https://developer.apple.com/documentation/uikit/1615103-uiaccessibilityisshaketoundoenab?language=objc>
@@ -67,7 +67,7 @@ Ref: <https://developer.apple.com/documentation/uikit/1615103-uiaccessibilityiss
 Returns a Boolean value indicating whether closed captioning is enabled.
 
 ```csharp
-Debug.Log(CandyCoded.UnityIOSBridge.Accessibility.IOSUIAccessibilityIsClosedCaptioningEnabled); // true
+Debug.Log(CandyCoded.UnityIOSBridge.Accessibility.IOSUIAccessibilityIsClosedCaptioningEnabled()); // true
 ```
 
 Ref: <https://developer.apple.com/documentation/uikit/1615112-uiaccessibilityisclosedcaptionin?language=objc>
@@ -77,7 +77,7 @@ Ref: <https://developer.apple.com/documentation/uikit/1615112-uiaccessibilityisc
 Returns a Boolean value indicating whether bold text is enabled.
 
 ```csharp
-Debug.Log(CandyCoded.UnityIOSBridge.Accessibility.IOSUIAccessibilityIsBoldTextEnabled); // true
+Debug.Log(CandyCoded.UnityIOSBridge.Accessibility.IOSUIAccessibilityIsBoldTextEnabled()); // true
 ```
 
 Ref: <https://developer.apple.com/documentation/uikit/1615156-uiaccessibilityisboldtextenabled?language=objc>
@@ -87,7 +87,7 @@ Ref: <https://developer.apple.com/documentation/uikit/1615156-uiaccessibilityisb
 Returns a Boolean value indicating whether darken colors is enabled.
 
 ```csharp
-Debug.Log(CandyCoded.UnityIOSBridge.Accessibility.IOSUIAccessibilityDarkerSystemColorsEnabled); // true
+Debug.Log(CandyCoded.UnityIOSBridge.Accessibility.IOSUIAccessibilityDarkerSystemColorsEnabled()); // true
 ```
 
 Ref: <https://developer.apple.com/documentation/uikit/1615087-uiaccessibilitydarkersystemcolor?language=objc>
@@ -97,7 +97,7 @@ Ref: <https://developer.apple.com/documentation/uikit/1615087-uiaccessibilitydar
 Returns a Boolean value indicating whether grayscale is enabled.
 
 ```csharp
-Debug.Log(CandyCoded.UnityIOSBridge.Accessibility.IOSUIAccessibilityIsGrayscaleEnabled); // true
+Debug.Log(CandyCoded.UnityIOSBridge.Accessibility.IOSUIAccessibilityIsGrayscaleEnabled()); // true
 ```
 
 Ref: <https://developer.apple.com/documentation/uikit/1615189-uiaccessibilityisgrayscaleenable?language=objc>
@@ -107,7 +107,7 @@ Ref: <https://developer.apple.com/documentation/uikit/1615189-uiaccessibilityisg
 Returns a Boolean value indicating whether the app is running in Guided Access mode.
 
 ```csharp
-Debug.Log(CandyCoded.UnityIOSBridge.Accessibility.IOSUIAccessibilityIsGuidedAccessEnabled); // true
+Debug.Log(CandyCoded.UnityIOSBridge.Accessibility.IOSUIAccessibilityIsGuidedAccessEnabled()); // true
 ```
 
 Ref: <https://developer.apple.com/documentation/uikit/1615173-uiaccessibilityisguidedaccessena?language=objc>
@@ -117,7 +117,7 @@ Ref: <https://developer.apple.com/documentation/uikit/1615173-uiaccessibilityisg
 Returns a Boolean value indicating whether inverted colors is enabled.
 
 ```csharp
-Debug.Log(CandyCoded.UnityIOSBridge.Accessibility.IOSUIAccessibilityIsInvertColorsEnabled); // true
+Debug.Log(CandyCoded.UnityIOSBridge.Accessibility.IOSUIAccessibilityIsInvertColorsEnabled()); // true
 ```
 
 Ref: <https://developer.apple.com/documentation/uikit/1615167-uiaccessibilityisinvertcolorsena?language=objc>
@@ -127,7 +127,7 @@ Ref: <https://developer.apple.com/documentation/uikit/1615167-uiaccessibilityisi
 Returns a Boolean value indicating whether system audio is set to mono.
 
 ```csharp
-Debug.Log(CandyCoded.UnityIOSBridge.Accessibility.IOSUIAccessibilityIsMonoAudioEnabled); // true
+Debug.Log(CandyCoded.UnityIOSBridge.Accessibility.IOSUIAccessibilityIsMonoAudioEnabled()); // true
 ```
 
 Ref: <https://developer.apple.com/documentation/uikit/1615123-uiaccessibilityismonoaudioenable?language=objc>
@@ -137,7 +137,7 @@ Ref: <https://developer.apple.com/documentation/uikit/1615123-uiaccessibilityism
 Returns a Boolean value indicating whether reduce motion is enabled.
 
 ```csharp
-Debug.Log(CandyCoded.UnityIOSBridge.Accessibility.IOSUIAccessibilityIsReduceMotionEnabled); // true
+Debug.Log(CandyCoded.UnityIOSBridge.Accessibility.IOSUIAccessibilityIsReduceMotionEnabled()); // true
 ```
 
 Ref: <https://developer.apple.com/documentation/uikit/1615133-uiaccessibilityisreducemotionena?language=objc>
@@ -147,7 +147,7 @@ Ref: <https://developer.apple.com/documentation/uikit/1615133-uiaccessibilityisr
 Returns a Boolean value indicating whether reduce transparency is enabled.
 
 ```csharp
-Debug.Log(CandyCoded.UnityIOSBridge.Accessibility.IOSUIAccessibilityIsReduceTransparencyEnabled); // true
+Debug.Log(CandyCoded.UnityIOSBridge.Accessibility.IOSUIAccessibilityIsReduceTransparencyEnabled()); // true
 ```
 
 Ref: <https://developer.apple.com/documentation/uikit/1615074-uiaccessibilityisreducetranspare?language=objc>
@@ -157,7 +157,7 @@ Ref: <https://developer.apple.com/documentation/uikit/1615074-uiaccessibilityisr
 Returns a Boolean value indicating whether speaking the screen is enabled.
 
 ```csharp
-Debug.Log(CandyCoded.UnityIOSBridge.Accessibility.IOSUIAccessibilityIsSpeakScreenEnabled); // true
+Debug.Log(CandyCoded.UnityIOSBridge.Accessibility.IOSUIAccessibilityIsSpeakScreenEnabled()); // true
 ```
 
 Ref: <https://developer.apple.com/documentation/uikit/1615109-uiaccessibilityisspeakscreenenab?language=objc>
@@ -167,7 +167,7 @@ Ref: <https://developer.apple.com/documentation/uikit/1615109-uiaccessibilityiss
 Returns a Boolean value indicating whether speaking the selection is enabled.
 
 ```csharp
-Debug.Log(CandyCoded.UnityIOSBridge.Accessibility.IOSUIAccessibilityIsSpeakSelectionEnabled); // true
+Debug.Log(CandyCoded.UnityIOSBridge.Accessibility.IOSUIAccessibilityIsSpeakSelectionEnabled()); // true
 ```
 
 Ref: <https://developer.apple.com/documentation/uikit/1615154-uiaccessibilityisspeakselectione?language=objc>
