@@ -68,7 +68,7 @@ namespace CandyCoded.UnityIOSBridge
         public static extern bool IOSIsLowPowerModeEnabled();
 
         [DllImport("__Internal")]
-        public static extern bool IOSUIImpactFeedbackGenerator(string style = "medium");
+        public static extern void IOSUIImpactFeedbackGenerator(string style = "medium");
 
     }
 
