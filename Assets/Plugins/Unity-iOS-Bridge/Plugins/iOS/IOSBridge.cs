@@ -92,9 +92,9 @@ namespace CandyCoded.UnityIOSBridge
             return new UIEdgeInsets
             {
                 top = IOSSafeAreaInsets("top"),
-                    left = IOSSafeAreaInsets("left"),
-                    right = IOSSafeAreaInsets("right"),
-                    bottom = IOSSafeAreaInsets("bottom")
+                left = IOSSafeAreaInsets("left"),
+                right = IOSSafeAreaInsets("right"),
+                bottom = IOSSafeAreaInsets("bottom")
             };
 
         }
