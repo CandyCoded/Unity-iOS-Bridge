@@ -5,6 +5,10 @@
 extern "C"
 {
     
+    bool IOSIsLowPowerModeEnabled() {
+        return [[NSProcessInfo processInfo] isLowPowerModeEnabled];
+    }
+    
     bool IOSPermissionCameraOK() {
         
         NSString *mediaType = AVMediaTypeVideo;
@@ -14,8 +18,51 @@ extern "C"
         
     }
     
-    bool IOSIsLowPowerModeEnabled() {
-        return [[NSProcessInfo processInfo] isLowPowerModeEnabled];
+    float IOSSafeAreaInsets(const char* side) {
+        
+        if (@available(iOS 11.0, *)) {
+            
+            const NSString* sideString = [NSString stringWithUTF8String: side];
+            
+            UIWindow *window = UIApplication.sharedApplication.keyWindow;
+            
+            if ([sideString isEqualToString:@"top"]) {
+                
+                return window.safeAreaInsets.top;
+                
+            } else if ([sideString isEqualToString:@"left"]) {
+                
+                return window.safeAreaInsets.left;
+                
+            } else if ([sideString isEqualToString:@"right"]) {
+                
+                return window.safeAreaInsets.right;
+                
+            } else if ([sideString isEqualToString:@"bottom"]) {
+                
+                return window.safeAreaInsets.bottom;
+                
+            } else {
+                
+                NSException* exception = [NSException
+                                          exceptionWithName:NSInvalidArgumentException
+                                          reason:@"Invalid side value."
+                                          userInfo:nil];
+                
+                [exception raise];
+                
+            }
+        }
+        
+        NSException* exception = [NSException
+                                  exceptionWithName:NSInvalidArgumentException
+                                  reason:@"SafeArea only avalible on iOS 11+"
+                                  userInfo:nil];
+        
+        [exception raise];
+        
+        return false;
+        
     }
     
     bool IOSUIAccessibilityIsAssistiveTouchRunning() {

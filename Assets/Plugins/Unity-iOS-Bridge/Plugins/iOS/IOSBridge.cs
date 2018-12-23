@@ -72,4 +72,33 @@ namespace CandyCoded.UnityIOSBridge
 
     }
 
+    public static class View
+    {
+
+        public struct UIEdgeInsets
+        {
+            public float top;
+            public float left;
+            public float right;
+            public float bottom;
+        }
+
+        [DllImport("__Internal")]
+        private static extern float IOSSafeAreaInsets(string side);
+
+        public static UIEdgeInsets IOSSafeAreaInsets()
+        {
+
+            return new UIEdgeInsets
+            {
+                top = IOSSafeAreaInsets("top"),
+                    left = IOSSafeAreaInsets("left"),
+                    right = IOSSafeAreaInsets("right"),
+                    bottom = IOSSafeAreaInsets("bottom")
+            };
+
+        }
+
+    }
+
 }
