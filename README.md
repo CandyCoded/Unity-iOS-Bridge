@@ -188,6 +188,10 @@ Ref: <https://developer.apple.com/documentation/avfoundation/avauthorizationstat
 
 A Boolean indicating whether Low Power Mode is enabled on an iOS device.
 
+```csharp
+Debug.Log(CandyCoded.UnityIOSBridge.Settings.IOSIsLowPowerModeEnabled()); // false
+```
+
 Ref: <https://developer.apple.com/documentation/foundation/nsprocessinfo/1617047-lowpowermodeenabled?language=objc>
 
 #### `IOSUIImpactFeedbackGenerator`
