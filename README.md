@@ -27,7 +27,9 @@ Make your apps accessible to everyone, including people with disabilities.
 Returns a Boolean value indicating whether the system preference for AssistiveTouch is enabled.
 
 ```csharp
+#if UNITY_IOS && !UNITY_EDITOR
 Debug.Log(CandyCoded.UnityIOSBridge.Accessibility.IOSUIAccessibilityIsAssistiveTouchRunning()); // true
+#endif
 ```
 
 Ref: <https://developer.apple.com/documentation/uikit/1648479-uiaccessibilityisassistivetouchr?language=objc>
@@ -37,7 +39,9 @@ Ref: <https://developer.apple.com/documentation/uikit/1648479-uiaccessibilityisa
 Returns a Boolean value indicating whether VoiceOver is running.
 
 ```csharp
+#if UNITY_IOS && !UNITY_EDITOR
 Debug.Log(CandyCoded.UnityIOSBridge.Accessibility.IOSUIAccessibilityIsVoiceOverRunning()); // true
+#endif
 ```
 
 Ref: <https://developer.apple.com/documentation/uikit/1615187-uiaccessibilityisvoiceoverrunnin?language=objc>
@@ -47,7 +51,9 @@ Ref: <https://developer.apple.com/documentation/uikit/1615187-uiaccessibilityisv
 Returns a Boolean value indicating whether Switch Control is enabled.
 
 ```csharp
+#if UNITY_IOS && !UNITY_EDITOR
 Debug.Log(CandyCoded.UnityIOSBridge.Accessibility.IOSUIAccessibilityIsSwitchControlRunning()); // true
+#endif
 ```
 
 Ref: <https://developer.apple.com/documentation/uikit/1615131-uiaccessibilityisswitchcontrolru?language=objc>
@@ -57,7 +63,9 @@ Ref: <https://developer.apple.com/documentation/uikit/1615131-uiaccessibilityiss
 Returns a Boolean value indicating whether the system preference for Shake to Undo is enabled.
 
 ```csharp
+#if UNITY_IOS && !UNITY_EDITOR
 Debug.Log(CandyCoded.UnityIOSBridge.Accessibility.IOSUIAccessibilityIsShakeToUndoEnabled()); // true
+#endif
 ```
 
 Ref: <https://developer.apple.com/documentation/uikit/1615103-uiaccessibilityisshaketoundoenab?language=objc>
@@ -67,7 +75,9 @@ Ref: <https://developer.apple.com/documentation/uikit/1615103-uiaccessibilityiss
 Returns a Boolean value indicating whether closed captioning is enabled.
 
 ```csharp
+#if UNITY_IOS && !UNITY_EDITOR
 Debug.Log(CandyCoded.UnityIOSBridge.Accessibility.IOSUIAccessibilityIsClosedCaptioningEnabled()); // true
+#endif
 ```
 
 Ref: <https://developer.apple.com/documentation/uikit/1615112-uiaccessibilityisclosedcaptionin?language=objc>
@@ -77,7 +87,9 @@ Ref: <https://developer.apple.com/documentation/uikit/1615112-uiaccessibilityisc
 Returns a Boolean value indicating whether bold text is enabled.
 
 ```csharp
+#if UNITY_IOS && !UNITY_EDITOR
 Debug.Log(CandyCoded.UnityIOSBridge.Accessibility.IOSUIAccessibilityIsBoldTextEnabled()); // true
+#endif
 ```
 
 Ref: <https://developer.apple.com/documentation/uikit/1615156-uiaccessibilityisboldtextenabled?language=objc>
@@ -87,7 +99,9 @@ Ref: <https://developer.apple.com/documentation/uikit/1615156-uiaccessibilityisb
 Returns a Boolean value indicating whether darken colors is enabled.
 
 ```csharp
+#if UNITY_IOS && !UNITY_EDITOR
 Debug.Log(CandyCoded.UnityIOSBridge.Accessibility.IOSUIAccessibilityDarkerSystemColorsEnabled()); // true
+#endif
 ```
 
 Ref: <https://developer.apple.com/documentation/uikit/1615087-uiaccessibilitydarkersystemcolor?language=objc>
@@ -97,7 +111,9 @@ Ref: <https://developer.apple.com/documentation/uikit/1615087-uiaccessibilitydar
 Returns a Boolean value indicating whether grayscale is enabled.
 
 ```csharp
+#if UNITY_IOS && !UNITY_EDITOR
 Debug.Log(CandyCoded.UnityIOSBridge.Accessibility.IOSUIAccessibilityIsGrayscaleEnabled()); // true
+#endif
 ```
 
 Ref: <https://developer.apple.com/documentation/uikit/1615189-uiaccessibilityisgrayscaleenable?language=objc>
@@ -107,7 +123,9 @@ Ref: <https://developer.apple.com/documentation/uikit/1615189-uiaccessibilityisg
 Returns a Boolean value indicating whether the app is running in Guided Access mode.
 
 ```csharp
+#if UNITY_IOS && !UNITY_EDITOR
 Debug.Log(CandyCoded.UnityIOSBridge.Accessibility.IOSUIAccessibilityIsGuidedAccessEnabled()); // true
+#endif
 ```
 
 Ref: <https://developer.apple.com/documentation/uikit/1615173-uiaccessibilityisguidedaccessena?language=objc>
@@ -117,7 +135,9 @@ Ref: <https://developer.apple.com/documentation/uikit/1615173-uiaccessibilityisg
 Returns a Boolean value indicating whether inverted colors is enabled.
 
 ```csharp
+#if UNITY_IOS && !UNITY_EDITOR
 Debug.Log(CandyCoded.UnityIOSBridge.Accessibility.IOSUIAccessibilityIsInvertColorsEnabled()); // true
+#endif
 ```
 
 Ref: <https://developer.apple.com/documentation/uikit/1615167-uiaccessibilityisinvertcolorsena?language=objc>
@@ -127,7 +147,9 @@ Ref: <https://developer.apple.com/documentation/uikit/1615167-uiaccessibilityisi
 Returns a Boolean value indicating whether system audio is set to mono.
 
 ```csharp
+#if UNITY_IOS && !UNITY_EDITOR
 Debug.Log(CandyCoded.UnityIOSBridge.Accessibility.IOSUIAccessibilityIsMonoAudioEnabled()); // true
+#endif
 ```
 
 Ref: <https://developer.apple.com/documentation/uikit/1615123-uiaccessibilityismonoaudioenable?language=objc>
@@ -137,7 +159,9 @@ Ref: <https://developer.apple.com/documentation/uikit/1615123-uiaccessibilityism
 Returns a Boolean value indicating whether reduce motion is enabled.
 
 ```csharp
+#if UNITY_IOS && !UNITY_EDITOR
 Debug.Log(CandyCoded.UnityIOSBridge.Accessibility.IOSUIAccessibilityIsReduceMotionEnabled()); // true
+#endif
 ```
 
 Ref: <https://developer.apple.com/documentation/uikit/1615133-uiaccessibilityisreducemotionena?language=objc>
@@ -147,7 +171,9 @@ Ref: <https://developer.apple.com/documentation/uikit/1615133-uiaccessibilityisr
 Returns a Boolean value indicating whether reduce transparency is enabled.
 
 ```csharp
+#if UNITY_IOS && !UNITY_EDITOR
 Debug.Log(CandyCoded.UnityIOSBridge.Accessibility.IOSUIAccessibilityIsReduceTransparencyEnabled()); // true
+#endif
 ```
 
 Ref: <https://developer.apple.com/documentation/uikit/1615074-uiaccessibilityisreducetranspare?language=objc>
@@ -157,7 +183,9 @@ Ref: <https://developer.apple.com/documentation/uikit/1615074-uiaccessibilityisr
 Returns a Boolean value indicating whether speaking the screen is enabled.
 
 ```csharp
+#if UNITY_IOS && !UNITY_EDITOR
 Debug.Log(CandyCoded.UnityIOSBridge.Accessibility.IOSUIAccessibilityIsSpeakScreenEnabled()); // true
+#endif
 ```
 
 Ref: <https://developer.apple.com/documentation/uikit/1615109-uiaccessibilityisspeakscreenenab?language=objc>
@@ -167,7 +195,9 @@ Ref: <https://developer.apple.com/documentation/uikit/1615109-uiaccessibilityiss
 Returns a Boolean value indicating whether speaking the selection is enabled.
 
 ```csharp
+#if UNITY_IOS && !UNITY_EDITOR
 Debug.Log(CandyCoded.UnityIOSBridge.Accessibility.IOSUIAccessibilityIsSpeakSelectionEnabled()); // true
+#endif
 ```
 
 Ref: <https://developer.apple.com/documentation/uikit/1615154-uiaccessibilityisspeakselectione?language=objc>
@@ -177,7 +207,9 @@ Ref: <https://developer.apple.com/documentation/uikit/1615154-uiaccessibilityiss
 #### `IOSPermissionCameraOK`
 
 ```csharp
+#if UNITY_IOS && !UNITY_EDITOR
 Debug.Log(CandyCoded.UnityIOSBridge.Permission.IOSPermissionCameraOK()); // true
+#endif
 ```
 
 Ref: <https://developer.apple.com/documentation/avfoundation/avauthorizationstatus?language=objc>
@@ -189,7 +221,9 @@ Ref: <https://developer.apple.com/documentation/avfoundation/avauthorizationstat
 A Boolean indicating whether Low Power Mode is enabled on an iOS device.
 
 ```csharp
+#if UNITY_IOS && !UNITY_EDITOR
 Debug.Log(CandyCoded.UnityIOSBridge.Settings.IOSIsLowPowerModeEnabled()); // false
+#endif
 ```
 
 Ref: <https://developer.apple.com/documentation/foundation/nsprocessinfo/1617047-lowpowermodeenabled?language=objc>
@@ -197,13 +231,17 @@ Ref: <https://developer.apple.com/documentation/foundation/nsprocessinfo/1617047
 #### `IOSUIImpactFeedbackGenerator`
 
 ```csharp
+#if UNITY_IOS && !UNITY_EDITOR
 CandyCoded.UnityIOSBridge.Settings.IOSUIImpactFeedbackGenerator();
+#endif
 ```
 
 ```csharp
+#if UNITY_IOS && !UNITY_EDITOR
 CandyCoded.UnityIOSBridge.Settings.IOSUIImpactFeedbackGenerator("light");
 CandyCoded.UnityIOSBridge.Settings.IOSUIImpactFeedbackGenerator("medium");
 CandyCoded.UnityIOSBridge.Settings.IOSUIImpactFeedbackGenerator("heavy");
+#endif
 ```
 
 Ref: <https://developer.apple.com/documentation/uikit/uiimpactfeedbackgenerator?language=objc>
@@ -215,7 +253,9 @@ Ref: <https://developer.apple.com/documentation/uikit/uiimpactfeedbackgenerator?
 The insets that you use to determine the safe area for this view.
 
 ```csharp
+#if UNITY_IOS && !UNITY_EDITOR
 Debug.Log(CandyCoded.UnityIOSBridge.View.IOSSafeAreaInsets()); // {top: 0, left: 0, right: 0, bottom: 0}
+#endif
 ```
 
 Ref: <https://developer.apple.com/documentation/uikit/uiview/2891103-safeareainsets?language=objc>
