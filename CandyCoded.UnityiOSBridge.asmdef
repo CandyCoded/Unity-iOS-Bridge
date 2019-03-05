@@ -1,3 +1,14 @@
-﻿{
-	"name": "CandyCoded.UnityiOSBridge"
+{
+    "name": "CandyCoded.UnityiOSBridge",
+    "references": [],
+    "optionalUnityReferences": [],
+    "includePlatforms": [
+        "iOS"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": []
 }
