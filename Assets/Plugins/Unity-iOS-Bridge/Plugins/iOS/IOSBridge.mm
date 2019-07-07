@@ -125,10 +125,13 @@ extern "C"
         return UIAccessibilityIsSpeakSelectionEnabled();
     }
 
-    void IOSUIAlertController() {
+    void IOSUIAlertController(const char* title, const char* message) {
 
-        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"My Alert"
-                                    message:@"This is an alert."
+        NSString* titleString = [NSString stringWithUTF8String: title];
+        NSString* messageString = [NSString stringWithUTF8String: message];
+
+        UIAlertController* alert = [UIAlertController alertControllerWithTitle:titleString
+                                    message:messageString
                                     preferredStyle:UIAlertControllerStyleAlert];
 
         UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault

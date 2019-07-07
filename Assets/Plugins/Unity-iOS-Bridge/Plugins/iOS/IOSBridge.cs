@@ -59,9 +59,9 @@ namespace CandyCoded.UnityIOSBridge
     {
 
         [DllImport("__Internal")]
-        private static extern void IOSUIAlertController();
+        private static extern void IOSUIAlertController(string title, string message);
 
-        public static void IOSUIAlertController(Action okCallback, Action cancelCallback)
+        public static void IOSUIAlertController(string title, string message, Action okCallback, Action cancelCallback)
         {
 
             var okGameObject = new GameObject("IOSBridgeEvents - UIAlertController - OK");
@@ -86,14 +86,14 @@ namespace CandyCoded.UnityIOSBridge
 
             };
 
-            IOSUIAlertController();
+            IOSUIAlertController(title, message);
 
         }
 
-        public static void IOSUIAlertController(Action okCallback)
+        public static void IOSUIAlertController(string title, string message, Action okCallback)
         {
 
-            IOSUIAlertController(okCallback, () => {});
+            IOSUIAlertController(title, message, okCallback, () => {});
 
         }
 
