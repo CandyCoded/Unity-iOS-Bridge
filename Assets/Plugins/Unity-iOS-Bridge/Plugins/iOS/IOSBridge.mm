@@ -132,12 +132,12 @@ extern "C"
                                     preferredStyle:UIAlertControllerStyleAlert];
 
         UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-                                        handler:nil];
+                                        handler:^(UIAlertAction * action) {}];
         [alert addAction:defaultAction];
         [alert setPreferredAction:defaultAction];
 
         UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel
-                                        handler:nil];
+                                        handler:^(UIAlertAction * action) {}];
         [alert addAction:cancelAction];
 
         UIViewController* view = [[[UIApplication sharedApplication] keyWindow] rootViewController];
