@@ -13,7 +13,6 @@ namespace CandyCoded.UnityIOSBridge
         {
 
             action?.Invoke();
-            action = null;
 
         }
 

@@ -134,14 +134,18 @@ extern "C"
         UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
                                         handler:^(UIAlertAction * action) {
 
-                                            UnitySendMessage("IOSBridgeEvents", "CallbackOneShot", "");
+                                            UnitySendMessage("IOSBridgeEvents - UIAlertController - OK", "CallbackOneShot", "");
 
                                         }];
         [alert addAction:defaultAction];
         [alert setPreferredAction:defaultAction];
 
         UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel
-                                        handler:nil];
+                                        handler:^(UIAlertAction * action) {
+
+                                            UnitySendMessage("IOSBridgeEvents - UIAlertController - Cancel", "CallbackOneShot", "");
+
+                                        }];
         [alert addAction:cancelAction];
 
         UIViewController* view = [[[UIApplication sharedApplication] keyWindow] rootViewController];
