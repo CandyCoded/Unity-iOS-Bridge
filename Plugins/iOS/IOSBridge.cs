@@ -53,6 +53,14 @@ namespace CandyCoded.UnityIOSBridge
 
     }
 
+    public static class Alert
+    {
+
+        [DllImport("__Internal")]
+        public static extern void IOSUIAlertController();
+
+    }
+
     public static class Permission
     {
 
