@@ -140,7 +140,9 @@ extern "C"
                                         handler:nil];
         [alert addAction:cancelAction];
 
-        [self presentViewController:alert animated:YES completion:nil];
+        UIViewController* view = [[[UIApplication sharedApplication] keyWindow] rootViewController];
+
+        [view presentViewController:alert animated:YES completion:nil];
 
     }
 
