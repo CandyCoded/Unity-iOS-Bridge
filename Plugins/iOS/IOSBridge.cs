@@ -1,4 +1,6 @@
+using System;
 using System.Runtime.InteropServices;
+using UnityEngine;
 
 namespace CandyCoded.UnityIOSBridge
 {
@@ -57,7 +59,27 @@ namespace CandyCoded.UnityIOSBridge
     {
 
         [DllImport("__Internal")]
-        public static extern void IOSUIAlertController();
+        private static extern void IOSUIAlertController();
+
+        private static GameObject gameObject;
+
+        public static void IOSUIAlertController(Action callback)
+        {
+
+            if (gameObject == null)
+            {
+
+                gameObject = new GameObject("IOSBridgeEvents");
+
+                gameObject.AddComponent<IOSBridgeEvents>();
+
+            }
+
+            gameObject.GetComponent<IOSBridgeEvents>().action = callback;
+
+            IOSUIAlertController();
+
+        }
 
     }
 
