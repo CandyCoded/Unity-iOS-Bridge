@@ -125,6 +125,25 @@ extern "C"
         return UIAccessibilityIsSpeakSelectionEnabled();
     }
 
+    void IOSUIAlertController() {
+
+        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"My Alert"
+                                    message:@"This is an alert."
+                                    preferredStyle:UIAlertControllerStyleAlert];
+
+        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                        handler:nil];
+        [alert addAction:defaultAction];
+        [alert setPreferredAction:defaultAction];
+
+        UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel
+                                        handler:nil];
+        [alert addAction:cancelAction];
+
+        [self presentViewController:alert animated:YES completion:nil];
+
+    }
+
     void IOSUIImpactFeedbackGenerator(const char* style) {
 
         UIImpactFeedbackStyle feedbackStyle;
