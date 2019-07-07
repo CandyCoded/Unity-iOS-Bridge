@@ -133,9 +133,9 @@ extern "C"
 
         UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
                                         handler:^(UIAlertAction * action) {
-                                        
+
                                             UnitySendMessage("IOSBridgeEvents", "CallbackOneShot", "");
-                                        
+
                                         }];
         [alert addAction:defaultAction];
         [alert setPreferredAction:defaultAction];
