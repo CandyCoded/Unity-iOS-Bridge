@@ -125,31 +125,38 @@ extern "C"
         return UIAccessibilityIsSpeakSelectionEnabled();
     }
 
-    void IOSUIAlertController(const char* title, const char* message) {
+    void IOSUIAlertController(const char* title, const char* message, const char* okGameObjectName, const char* cancelGameObjectName) {
 
         NSString* titleString = [NSString stringWithUTF8String: title];
         NSString* messageString = [NSString stringWithUTF8String: message];
 
+        NSString* okGameObjectNameString = [NSString stringWithUTF8String: okGameObjectName];
+        NSString* cancelGameObjectNameString = [NSString stringWithUTF8String: cancelGameObjectName];
+
         UIAlertController* alert = [UIAlertController alertControllerWithTitle:titleString
-                                    message:messageString
-                                    preferredStyle:UIAlertControllerStyleAlert];
+                                                                       message:messageString
+                                                                preferredStyle:UIAlertControllerStyleAlert];
 
         UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-                                        handler:^(UIAlertAction * action) {
+                                                              handler:^(UIAlertAction * action) {
 
-                                            UnitySendMessage("IOSBridgeEvents - UIAlertController - OK", "CallbackOneShot", "");
+                                                                  UnitySendMessage([okGameObjectNameString UTF8String], "CallbackOneShot", "");
 
-                                        }];
+                                                              }];
         [alert addAction:defaultAction];
-        [alert setPreferredAction:defaultAction];
 
-        UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel
-                                        handler:^(UIAlertAction * action) {
+        if ([cancelGameObjectNameString length] > 0) {
 
-                                            UnitySendMessage("IOSBridgeEvents - UIAlertController - Cancel", "CallbackOneShot", "");
+            UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel
+                                                                 handler:^(UIAlertAction * action) {
 
-                                        }];
-        [alert addAction:cancelAction];
+                                                                     UnitySendMessage([cancelGameObjectNameString UTF8String], "CallbackOneShot", "");
+
+                                                                 }];
+            [alert addAction:cancelAction];
+            [alert setPreferredAction:defaultAction];
+
+        }
 
         UIViewController* view = [[[UIApplication sharedApplication] keyWindow] rootViewController];
 
