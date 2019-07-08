@@ -59,16 +59,18 @@ namespace CandyCoded.UnityIOSBridge
     {
 
         [DllImport("__Internal")]
-        private static extern void IOSUIAlertController(string title, string message);
+        private static extern void IOSUIAlertController(string title, string message, string okGameObjectName, string cancelGameObjectName);
 
         public static void IOSUIAlertController(string title, string message, Action okCallback, Action cancelCallback)
         {
 
-            var okGameObject = new GameObject("IOSBridgeEvents - UIAlertController - OK");
+            var okGameObjectName = "IOSBridgeEvents - UIAlertController - OK";
+            var okGameObject = new GameObject(okGameObjectName);
             var okBridgeEvents = okGameObject.AddComponent<IOSBridgeEvents>();
             okBridgeEvents.action += okCallback;
 
-            var cancelGameObject = new GameObject("IOSBridgeEvents - UIAlertController - Cancel");
+            var cancelGameObjectName = "IOSBridgeEvents - UIAlertController - Cancel";
+            var cancelGameObject = new GameObject(cancelGameObjectName);
             var cancelBridgeEvents = cancelGameObject.AddComponent<IOSBridgeEvents>();
             cancelBridgeEvents.action += cancelCallback;
 
@@ -86,14 +88,25 @@ namespace CandyCoded.UnityIOSBridge
 
             };
 
-            IOSUIAlertController(title, message);
+            IOSUIAlertController(title, message, okGameObjectName, cancelGameObjectName);
 
         }
 
         public static void IOSUIAlertController(string title, string message, Action okCallback)
         {
 
-            IOSUIAlertController(title, message, okCallback, () => {});
+            var okGameObjectName = "IOSBridgeEvents - UIAlertController - OK";
+            var okGameObject = new GameObject(okGameObjectName);
+            var okBridgeEvents = okGameObject.AddComponent<IOSBridgeEvents>();
+            okBridgeEvents.action += okCallback;
+
+            okBridgeEvents.action += () => {
+
+                UnityEngine.Object.Destroy(okGameObject);
+
+            };
+
+            IOSUIAlertController(title, message, okGameObjectName, "");
 
         }
 
