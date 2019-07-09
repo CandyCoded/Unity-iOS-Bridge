@@ -64,13 +64,11 @@ namespace CandyCoded.UnityIOSBridge
         public static void IOSUIAlertController(string title, string message, Action okCallback, Action cancelCallback)
         {
 
-            var okGameObjectName = "IOSBridgeEvents - UIAlertController - OK";
-            var okGameObject = new GameObject(okGameObjectName);
+            var okGameObject = new GameObject("IOSBridgeEvents - UIAlertController - OK");
             var okBridgeEvents = okGameObject.AddComponent<IOSBridgeEvents>();
             okBridgeEvents.action += okCallback;
 
-            var cancelGameObjectName = "IOSBridgeEvents - UIAlertController - Cancel";
-            var cancelGameObject = new GameObject(cancelGameObjectName);
+            var cancelGameObject = new GameObject("IOSBridgeEvents - UIAlertController - Cancel");
             var cancelBridgeEvents = cancelGameObject.AddComponent<IOSBridgeEvents>();
             cancelBridgeEvents.action += cancelCallback;
 
@@ -88,15 +86,14 @@ namespace CandyCoded.UnityIOSBridge
 
             };
 
-            IOSUIAlertController(title, message, okGameObjectName, cancelGameObjectName);
+            IOSUIAlertController(title, message, okGameObject.name, cancelGameObject.name);
 
         }
 
         public static void IOSUIAlertController(string title, string message, Action okCallback)
         {
 
-            var okGameObjectName = "IOSBridgeEvents - UIAlertController - OK";
-            var okGameObject = new GameObject(okGameObjectName);
+            var okGameObject = new GameObject("IOSBridgeEvents - UIAlertController - OK");
             var okBridgeEvents = okGameObject.AddComponent<IOSBridgeEvents>();
             okBridgeEvents.action += okCallback;
 
@@ -106,7 +103,7 @@ namespace CandyCoded.UnityIOSBridge
 
             };
 
-            IOSUIAlertController(title, message, okGameObjectName, "");
+            IOSUIAlertController(title, message, okGameObject.name, "");
 
         }
 
