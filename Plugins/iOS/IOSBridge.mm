@@ -56,7 +56,7 @@ extern "C"
 
         NSException* exception = [NSException
                                   exceptionWithName:NSInvalidArgumentException
-                                  reason:@"SafeArea only avalible on iOS 11+"
+                                  reason:@"SafeArea only available on iOS 11+"
                                   userInfo:nil];
 
         [exception raise];
@@ -186,7 +186,7 @@ extern "C"
 
             NSException* exception = [NSException
                                       exceptionWithName:NSInvalidArgumentException
-                                      reason:@"Invalid inpact feedback style."
+                                      reason:@"Invalid impact feedback style."
                                       userInfo:nil];
 
             [exception raise];
