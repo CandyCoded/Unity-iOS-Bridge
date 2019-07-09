@@ -9,7 +9,7 @@
 ```json
 {
     "dependencies": {
-        "com.candycoded.unity-ios-bridge": "https://github.com/neogeek/Unity-iOS-Bridge.git#v1.0.0"
+        "com.candycoded.unity-ios-bridge": "https://github.com/neogeek/Unity-iOS-Bridge.git#v1.1.0"
     }
 }
 ```
