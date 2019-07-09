@@ -1,4 +1,6 @@
+using System;
 using System.Runtime.InteropServices;
+using UnityEngine;
 
 namespace CandyCoded.UnityIOSBridge
 {
@@ -50,6 +52,60 @@ namespace CandyCoded.UnityIOSBridge
 
         [DllImport("__Internal")]
         public static extern bool IOSUIAccessibilityIsSpeakSelectionEnabled();
+
+    }
+
+    public static class Alert
+    {
+
+        [DllImport("__Internal")]
+        private static extern void IOSUIAlertController(string title, string message, string okGameObjectName, string cancelGameObjectName);
+
+        public static void IOSUIAlertController(string title, string message, Action okCallback, Action cancelCallback)
+        {
+
+            var okGameObject = new GameObject("IOSBridgeEvents - UIAlertController - OK");
+            var okBridgeEvents = okGameObject.AddComponent<IOSBridgeEvents>();
+            okBridgeEvents.action += okCallback;
+
+            var cancelGameObject = new GameObject("IOSBridgeEvents - UIAlertController - Cancel");
+            var cancelBridgeEvents = cancelGameObject.AddComponent<IOSBridgeEvents>();
+            cancelBridgeEvents.action += cancelCallback;
+
+            okBridgeEvents.action += () => {
+
+                UnityEngine.Object.Destroy(cancelGameObject);
+                UnityEngine.Object.Destroy(okGameObject);
+
+            };
+
+            cancelBridgeEvents.action += () => {
+
+                UnityEngine.Object.Destroy(okGameObject);
+                UnityEngine.Object.Destroy(cancelGameObject);
+
+            };
+
+            IOSUIAlertController(title, message, okGameObject.name, cancelGameObject.name);
+
+        }
+
+        public static void IOSUIAlertController(string title, string message, Action okCallback)
+        {
+
+            var okGameObject = new GameObject("IOSBridgeEvents - UIAlertController - OK");
+            var okBridgeEvents = okGameObject.AddComponent<IOSBridgeEvents>();
+            okBridgeEvents.action += okCallback;
+
+            okBridgeEvents.action += () => {
+
+                UnityEngine.Object.Destroy(okGameObject);
+
+            };
+
+            IOSUIAlertController(title, message, okGameObject.name, "");
+
+        }
 
     }
 

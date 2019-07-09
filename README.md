@@ -202,6 +202,22 @@ Debug.Log(CandyCoded.UnityIOSBridge.Accessibility.IOSUIAccessibilityIsSpeakSelec
 
 Ref: <https://developer.apple.com/documentation/uikit/1615154-uiaccessibilityisspeakselectione?language=objc>
 
+### Alerts
+
+#### `IOSUIAlertController`
+
+```csharp
+#if UNITY_IOS && !UNITY_EDITOR
+	CandyCoded.UnityIOSBridge.Alert.IOSUIAlertController("Title", "message", () => { Debug.Log("OK"); });
+#endif
+```
+
+```csharp
+#if UNITY_IOS && !UNITY_EDITOR
+	CandyCoded.UnityIOSBridge.Alert.IOSUIAlertController("Title", "message", () => { Debug.Log("OK"); }, () => { Debug.Log("Cancel"); });
+#endif
+```
+
 ### Permission
 
 #### `IOSPermissionCameraOK`

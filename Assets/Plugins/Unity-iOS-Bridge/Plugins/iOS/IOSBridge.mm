@@ -125,6 +125,45 @@ extern "C"
         return UIAccessibilityIsSpeakSelectionEnabled();
     }
 
+    void IOSUIAlertController(const char* title, const char* message, const char* okGameObjectName, const char* cancelGameObjectName) {
+
+        NSString* titleString = [NSString stringWithUTF8String: title];
+        NSString* messageString = [NSString stringWithUTF8String: message];
+
+        NSString* okGameObjectNameString = [NSString stringWithUTF8String: okGameObjectName];
+        NSString* cancelGameObjectNameString = [NSString stringWithUTF8String: cancelGameObjectName];
+
+        UIAlertController* alert = [UIAlertController alertControllerWithTitle:titleString
+                                                                       message:messageString
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+
+        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                              handler:^(UIAlertAction * action) {
+
+                                                                  UnitySendMessage([okGameObjectNameString UTF8String], "CallbackOneShot", "");
+
+                                                              }];
+        [alert addAction:defaultAction];
+
+        if ([cancelGameObjectNameString length] > 0) {
+
+            UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel
+                                                                 handler:^(UIAlertAction * action) {
+
+                                                                     UnitySendMessage([cancelGameObjectNameString UTF8String], "CallbackOneShot", "");
+
+                                                                 }];
+            [alert addAction:cancelAction];
+            [alert setPreferredAction:defaultAction];
+
+        }
+
+        UIViewController* view = [[[UIApplication sharedApplication] keyWindow] rootViewController];
+
+        [view presentViewController:alert animated:YES completion:nil];
+
+    }
+
     void IOSUIImpactFeedbackGenerator(const char* style) {
 
         UIImpactFeedbackStyle feedbackStyle;
