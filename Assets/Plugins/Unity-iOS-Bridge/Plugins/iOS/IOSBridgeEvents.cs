@@ -14,6 +14,8 @@ namespace CandyCoded.UnityIOSBridge
 
             action?.Invoke();
 
+            Destroy(gameObject);
+
         }
 
     }

@@ -75,14 +75,12 @@ namespace CandyCoded.UnityIOSBridge
             okBridgeEvents.action += () => {
 
                 UnityEngine.Object.Destroy(cancelGameObject);
-                UnityEngine.Object.Destroy(okGameObject);
 
             };
 
             cancelBridgeEvents.action += () => {
 
                 UnityEngine.Object.Destroy(okGameObject);
-                UnityEngine.Object.Destroy(cancelGameObject);
 
             };
 
@@ -96,12 +94,6 @@ namespace CandyCoded.UnityIOSBridge
             var okGameObject = new GameObject("IOSBridgeEvents - UIAlertController - OK");
             var okBridgeEvents = okGameObject.AddComponent<IOSBridgeEvents>();
             okBridgeEvents.action += okCallback;
-
-            okBridgeEvents.action += () => {
-
-                UnityEngine.Object.Destroy(okGameObject);
-
-            };
 
             IOSUIAlertController(title, message, okGameObject.name, "");
 
