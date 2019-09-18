@@ -2,15 +2,13 @@
 
 ## Installation
 
-### Unity Package Manager _(Unity 2018.3)_
-
-<https://docs.unity3d.com/Packages/com.unity.package-manager-ui@2.0/manual/index.html>
+### Unity Package Manager
 
 ```json
 {
-    "dependencies": {
-        "com.candycoded.unity-ios-bridge": "https://github.com/CandyCoded/Unity-iOS-Bridge.git#v1.1.0"
-    }
+  "dependencies": {
+    "com.candycoded.unity-ios-bridge": "https://github.com/CandyCoded/Unity-iOS-Bridge.git#v1.1.0"
+  }
 }
 ```
 
