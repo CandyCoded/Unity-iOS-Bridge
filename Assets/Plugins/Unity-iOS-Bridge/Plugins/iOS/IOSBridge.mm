@@ -5,6 +5,15 @@
 extern "C"
 {
 
+    void IOSImageAddToGallery(const char* path) {
+
+        NSString* fileString = [NSString stringWithUTF8String: path];
+
+        UIImage *image = [UIImage imageWithContentsOfFile:fileString];
+        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
+
+    }
+
     bool IOSIsLowPowerModeEnabled() {
         return [[NSProcessInfo processInfo] isLowPowerModeEnabled];
     }
