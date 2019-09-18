@@ -109,6 +109,14 @@ namespace CandyCoded.UnityIOSBridge
 
     }
 
+    public static class Photos
+    {
+
+        [DllImport("__Internal")]
+        public static extern bool IOSImageAddToGallery(string path);
+
+    }
+
     public static class Settings
     {
 

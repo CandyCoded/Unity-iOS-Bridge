@@ -2,17 +2,24 @@
 
 ## Installation
 
-### Unity Package Manager _(Unity 2018.3)_
-
-<https://docs.unity3d.com/Packages/com.unity.package-manager-ui@2.0/manual/index.html>
+### Unity Package Manager
 
 ```json
 {
-    "dependencies": {
-        "com.candycoded.unity-ios-bridge": "https://github.com/CandyCoded/Unity-iOS-Bridge.git#v1.1.0"
-    }
+  "dependencies": {
+    "com.candycoded.unity-ios-bridge": "https://github.com/CandyCoded/Unity-iOS-Bridge.git#v1.1.0"
+  }
 }
 ```
+
+## Contents
+
+- [Accessibility](#accessibility)
+- [Alerts](#alerts)
+- [Permission](#permission)
+- [Photos](#photos)
+- [Settings](#settings)
+- [View](#view)
 
 ## Documentation
 
@@ -229,6 +236,49 @@ Debug.Log(CandyCoded.UnityIOSBridge.Permission.IOSPermissionCameraOK()); // true
 ```
 
 Ref: <https://developer.apple.com/documentation/avfoundation/avauthorizationstatus?language=objc>
+
+### Photos
+
+#### `IOSImageAddToGallery`
+
+Note: This requires `NSPhotoLibraryAddUsageDescription` to be in the `Info.plist` file with a value.
+
+Note: `Screenshot.Save` uses the internal method `ScreenCapture.CaptureScreenshot` which returns before the file is saved to the device. Make sure the file exists before calling `IOSImageAddToGallery` by using a coroutine to wait until the file exists.
+
+```csharp
+public void TakeScreenshot()
+{
+
+    StartCoroutine(TakeScreenshotCoroutine());
+
+}
+
+private static IEnumerator TakeScreenshotCoroutine()
+{
+
+    var screenshotFilePath = Screenshot.Save();
+
+    Debug.Log($"Saved screenshot to {screenshotFilePath}");
+
+    while (!File.Exists(screenshotFilePath))
+    {
+
+        yield return null;
+
+    }
+
+    yield return new WaitForEndOfFrame();
+
+#if UNITY_IOS && !UNITY_EDITOR
+    CandyCoded.UnityIOSBridge.Photos.IOSImageAddToGallery(screenshotFilePath);
+    Debug.Log("Saved to gallery.");
+#endif
+
+}
+```
+
+Ref: <https://developer.apple.com/documentation/bundleresources/information_property_list/nsphotolibraryaddusagedescription?language=objc>
+Ref: <https://developer.apple.com/documentation/bundleresources/information_property_list/uifilesharingenabled?language=objc>
 
 ### Settings
 
