@@ -1,8 +1,8 @@
 {
     "name": "CandyCoded.UnityiOSBridge",
     "references": [],
-    "optionalUnityReferences": [],
     "includePlatforms": [
+        "Editor",
         "iOS"
     ],
     "excludePlatforms": [],
