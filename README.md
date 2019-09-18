@@ -243,14 +243,38 @@ Ref: <https://developer.apple.com/documentation/avfoundation/avauthorizationstat
 
 Note: This requires `NSPhotoLibraryAddUsageDescription` to be in the `Info.plist` file with a value.
 
+Note: `Screenshot.Save` uses the internal method `ScreenCapture.CaptureScreenshot` which returns before the file is saved to the device. Make sure the file exists before calling `IOSImageAddToGallery` by using a coroutine to wait until the file exists.
+
 ```csharp
-var screenshotFilePath = Screenshot.Save();
+public void TakeScreenshot()
+{
+
+    StartCoroutine(TakeScreenshotCoroutine());
+
+}
+
+private static IEnumerator TakeScreenshotCoroutine()
+{
+
+    var screenshotFilePath = Screenshot.Save();
+
+    Debug.Log($"Saved screenshot to {screenshotFilePath}");
+
+    while (!File.Exists(screenshotFilePath))
+    {
+
+        yield return null;
+
+    }
+
+    yield return new WaitForEndOfFrame();
 
 #if UNITY_IOS && !UNITY_EDITOR
-CandyCoded.UnityIOSBridge.Photos.IOSImageAddToGallery(screenshotFilePath);
+    CandyCoded.UnityIOSBridge.Photos.IOSImageAddToGallery(screenshotFilePath);
+    Debug.Log("Saved to gallery.");
 #endif
 
-Debug.Log($"Saved screenshot to {screenshotFilePath}");
+}
 ```
 
 Ref: <https://developer.apple.com/documentation/bundleresources/information_property_list/nsphotolibraryaddusagedescription?language=objc>
