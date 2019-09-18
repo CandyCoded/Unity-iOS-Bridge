@@ -228,6 +228,25 @@ Debug.Log(CandyCoded.UnityIOSBridge.Permission.IOSPermissionCameraOK()); // true
 
 Ref: <https://developer.apple.com/documentation/avfoundation/avauthorizationstatus?language=objc>
 
+### Photos
+
+#### `IOSImageAddToGallery`
+
+Note: This requires `NSPhotoLibraryAddUsageDescription` to be in the `Info.plist` file with a value.
+
+```csharp
+var screenshotFilePath = Screenshot.Save();
+
+#if UNITY_IOS && !UNITY_EDITOR
+CandyCoded.UnityIOSBridge.Photos.IOSImageAddToGallery(screenshotFilePath);
+#endif
+
+Debug.Log($"Saved screenshot to {screenshotFilePath}");
+```
+
+Ref: <https://developer.apple.com/documentation/bundleresources/information_property_list/nsphotolibraryaddusagedescription?language=objc>
+Ref: <https://developer.apple.com/documentation/bundleresources/information_property_list/uifilesharingenabled?language=objc>
+
 ### Settings
 
 #### `IOSIsLowPowerModeEnabled`
