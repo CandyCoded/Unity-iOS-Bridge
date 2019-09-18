@@ -12,6 +12,15 @@
 }
 ```
 
+## Contents
+
+- [Accessibility](#accessibility)
+- [Alerts](#alerts)
+- [Permission](#permission)
+- [Photos](#photos)
+- [Settings](#settings)
+- [View](#view)
+
 ## Documentation
 
 ### Accessibility
