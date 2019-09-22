@@ -1,11 +1,23 @@
 {
-    "name": "com.candycoded.unity-ios-bridge",
-    "displayName": "Unity iOS Bridge",
-    "version": "1.1.0",
-    "unity": "2019.1",
-    "description": "Bridge for requesting state from an iOS device",
-    "keywords": [
-        "ios"
-    ],
-    "dependencies": {}
+  "name": "xyz.candycoded.unity-ios-bridge",
+  "displayName": "Unity iOS Bridge",
+  "version": "1.1.0",
+  "unity": "2019.2",
+  "unityRelease": "2f1",
+  "description": "Bridge for requesting state from an iOS device",
+  "license": "MIT",
+  "dependencies": {},
+  "keywords": [
+    "ios"
+  ],
+  "author": {
+    "name": "Scott Doxey",
+    "email": "hello@scottdoxey.com",
+    "homepage": "http://scottdoxey.com/"
+  },
+  "homepage": "https://github.com/CandyCoded/Unity-iOS-Bridge",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:CandyCoded/Unity-iOS-Bridge.git"
+  }
 }
